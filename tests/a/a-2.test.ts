@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@jest/globals';
+import { describe, expect, it } from '@jest/globals';
 import { solve } from '../../src/problems/a/a-2.js';
 
 describe('A-2', () => {

@@ -1,4 +1,4 @@
-﻿# TypeScript Learning
+# TypeScript Learning
 
 ## 📋 概要
 
@@ -10,6 +10,8 @@
 - **Jest** - テストフレームワーク
 - **Vite** - ビルドツール
 - **ts-jest** - TypeScript 用 Jest 設定
+- **ESLint** - コード品質チェック
+- **Prettier** - コードフォーマッター
 
 ## 🚀 セットアップ
 
@@ -45,6 +47,22 @@ npm test -- --verbose
 npm test -- --coverage
 ```
 
+### コード品質管理
+
+```bash
+# ESLintでコードをチェック
+npm run lint
+
+# ESLintで自動修正
+npm run lint:fix
+
+# Prettierでコードをフォーマット
+npm run format
+
+# Prettierでフォーマットをチェック（修正なし）
+npm run format:check
+```
+
 ### 開発サーバーの起動
 
 ```bash
@@ -60,7 +78,7 @@ npm run preview
 
 ## 📁 テストについて
 
-各問題には対応するテストファイルが用意します。テストは以下の形式で記述するように心がけています！
+各問題には対応するテストファイルが用意されています。テストは以下の形式で記述するように心がけています！
 
 ```typescript
 import { describe, it, expect } from '@jest/globals';
@@ -96,6 +114,12 @@ describe('A-2', () => {
 - **環境**: Node.js
 - **プリセット**: ts-jest (ESM 対応)
 - **テストパターン**: `**/*.test.ts`
+
+### コード品質管理
+
+- **ESLint**: TypeScript用の厳密なルール設定
+- **Prettier**: 一貫したコードフォーマット
+- **保存時自動修正**: VSCodeで保存時に自動的にフォーマット・修正
 
 ## 🤝 コントリビューション
 
