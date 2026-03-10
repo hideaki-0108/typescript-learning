@@ -1,10 +1,10 @@
 # TypeScript Learning
 
-## 📋 概要
+## 概要
 
 このリポジトリは、TypeScript の学習とアルゴリズム問題の解決を通じて、実践的なプログラミングスキルを身につけることを目的としています。基本は AtCoder を参考に AI に問題を作成してもらってます。
 
-## 🛠️ 技術スタック
+## 技術スタック
 
 - **TypeScript** - メイン言語
 - **Jest** - テストフレームワーク
@@ -12,39 +12,56 @@
 - **ts-jest** - TypeScript 用 Jest 設定
 - **ESLint** - コード品質チェック
 - **Prettier** - コードフォーマッター
+- **mise** - ツールチェーン管理
+- **Bun** - 実行環境（AtCoder用）
 
-## 🚀 セットアップ
+## セットアップ
 
 ### 前提条件
 
 - Node.js (v20.11.1 を使用)
+- Bun (v1.2.21 / TypeScript 5.9.2 同梱)
 
 ### インストール
 
 ```bash
+# miseでツールを揃える（推奨）
+mise install
+mise use -g
+
 # 依存関係をインストール
 npm install
 ```
 
-## 📝 使用方法
+## 使用方法
 
 ### テストの実行
 
 ```bash
 # 全テストを実行
 npm test
+# Bunを使う場合
+bun test
 
 # 特定のテストファイルを実行
 npm test tests/a/a-2.test.ts
+# Bunを使う場合
+bun test  tests/a/a-2.test.ts
 
 # ウォッチモードで実行（ファイル変更時に自動再実行）
 npm run test:watch
+# Bunを使う場合
+bun run test:watch
 
 # 詳細出力で実行
 npm test -- --verbose
+# Bunを使う場合
+bun test -- --verbose
 
 # カバレッジ付きで実行
 npm test -- --coverage
+# Bunを使う場合
+bun test -- --coverage
 ```
 
 ### コード品質管理
@@ -76,7 +93,15 @@ npm run build
 npm run preview
 ```
 
-## 📁 テストについて
+### 型チェック
+
+`typecheck` は **Bun同梱のTypeScript(5.9.2)** を使って実行します。
+
+```bash
+bun run typecheck
+```
+
+## テストについて
 
 各問題には対応するテストファイルが用意されています。テストは以下の形式で記述するように心がけています！
 
@@ -93,14 +118,14 @@ describe('A-2', () => {
 });
 ```
 
-## 📚 学習の進め方
+## 学習の進め方
 
 1. **問題を作る**: 各問題ファイルに問題を作成してもらう
 2. **実装する**: `solve` 関数を実装
 3. **テストする**: `npm test` でテストを実行
 4. **改善する**: コードの可読性や効率性を向上
 
-## 🔧 開発環境
+## 開発環境
 
 ### TypeScript 設定
 
@@ -121,7 +146,7 @@ describe('A-2', () => {
 - **Prettier**: 一貫したコードフォーマット
 - **保存時自動修正**: VSCodeで保存時に自動的にフォーマット・修正
 
-## 🤝 コントリビューション
+## コントリビューション
 
 新しい問題を追加する場合は、以下の形式に従ってください
 
@@ -129,6 +154,6 @@ describe('A-2', () => {
 2. `tests/[category]/[problem-id].test.ts` にテスト
 3. 問題の説明と制約をコメントで記載
 
-## 📄 ライセンス
+## ライセンス
 
 このプロジェクトは学習目的で作成されています。

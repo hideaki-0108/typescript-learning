@@ -5,10 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "bun x tsc --noEmit && vite build",
     "preview": "vite preview",
+    "solve": "bun run src/runner.ts",
+    "typecheck": "bun x tsc --noEmit",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:watch": "jest --watch",
+    "test:bun": "bun test",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write .",
@@ -26,7 +29,7 @@
     "jest": "^30.0.0",
     "prettier": "^3.5.3",
     "ts-jest": "^29.4.0",
-    "typescript": "~5.8.3",
+    "typescript": "5.9.2",
     "vite": "^6.3.5"
   }
 }
